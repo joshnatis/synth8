@@ -2,7 +2,7 @@
 * Author            : Josh Natis                                               *
 * Last Modified     : 12/16/2020                                               *
 * Description       : program to control a synth (i.e. read inputs and output  *
-*                     proper signal to the speaker based on them).             *
+*                     and send proper signal to the speaker based on them).    *
 * Technical Details : The program sends the output PWM audio signal to pin 11. *
 *                     It receives inputs from pins 1-9,12,13 (an octave of     *
 *                     buttons), as well as from A2-A5 (potentiometers).        *
