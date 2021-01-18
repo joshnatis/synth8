@@ -42,8 +42,8 @@ const int BUTTONS[] = {BTN1, BTN2, BTN3, BTN4, BTN5, BTN6, BTN7, BTN8, BTN9, BTN
 
 /* we only want to act when a button's state changes (it's pressed or released)
    to see if something has changed, compare to state from previous read (i.e. cache) */
-bool BUTTON_CURRENT_STATES[12] = {LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW};
-bool BUTTON_CACHED_STATES[12]  = {LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW};
+bool BUTTON_CURRENT_STATES[] = {LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW};
+bool BUTTON_CACHED_STATES[]  = {LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW, LOW};
 
 /* mystery button is mysterious... it's also red */
 #define MYSTERY_BUTTON 0
@@ -241,7 +241,7 @@ void sanity_check()
     }
 
     if(sum == 0 && cache_sum != 0) /* all buttons off, some just released */
-        for(int i = 0; i < 4; ++i) /* turn voices all voices just in case */
+        for(int i = 0; i < 4; ++i) /* turn off all voices just in case */
         {
             VOICES[i] = -1;
             winona.setupVoice(i, TRIANGLE, 0, ENVELOPE3, 0, 0);
